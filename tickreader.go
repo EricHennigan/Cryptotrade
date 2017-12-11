@@ -10,7 +10,6 @@ import (
 type Worker struct {
   Name string
   Config map[string]string
-  Dialer ws.Dialer
   Connection *Conn
   MessageChannel map[string]string
   Message gdax.Message{}
@@ -18,7 +17,8 @@ type Worker struct {
 }
 
 func (wkr *Worker) Init(address string, action string, product, string){
-  wkr.Connection, _, err := wkr.Dialer.Dial(address, nil)
+  var wsDialer ws.Dialer
+  wkr.Connection, _, err := wsDialer.Dialer.Dial(address, nil)
   if err != nil {
     fmt.Println(err.Error())
   }
