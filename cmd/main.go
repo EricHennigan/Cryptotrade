@@ -2,7 +2,7 @@ package main
 
 import (
    "fmt"
-   "github.com/Cryptotrade"
+   "github.com/Cryptotrade/ctrade"
 )
 
 func main() {

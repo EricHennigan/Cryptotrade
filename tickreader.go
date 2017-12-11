@@ -1,4 +1,4 @@
-package Cryptotrade
+package ctrade
 
 import (
   "fmt"
