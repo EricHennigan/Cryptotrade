@@ -1,11 +1,10 @@
 package main
 
 import (
-   "./data"
+	"./data"
 )
 
 func main() {
-  w1 := data.GdaxReader{}
-  w1.Init("wss://ws-feed.gdax.com", "BTC-USD")
-  w1.Listen()
+	w1 := data.NewReader("level2", []string{"BTC-USD"})
+	w1.Listen()
 }
